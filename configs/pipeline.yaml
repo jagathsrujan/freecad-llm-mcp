@@ -1,0 +1,17 @@
+# Pipeline Configuration
+
+pipeline:
+  mode: atomic
+  state_query_interval: 1
+  max_consecutive_failures: 3
+  log_level: INFO
+
+mcp:
+  server_url: localhost:PORT
+  timeout_seconds: 30
+  retry_on_timeout: true
+
+output:
+  save_state_snapshots: true
+  snapshot_dir: ./runs/
+  log_dir: ./logs/

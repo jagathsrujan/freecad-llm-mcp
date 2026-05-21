@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.env
+.env
+configs/models.yaml
+configs/mcp_server.yaml
+runs/
+logs/
+*.FCStd
+*.step
+*.iges
+.DS_Store
+venv/
+.venv/
+dist/
+*.egg-info/

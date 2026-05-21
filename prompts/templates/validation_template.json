@@ -1,0 +1,43 @@
+{
+  "template_name": "validation",
+  "description": "Validates geometry against rule-based constraints after MCP commit",
+  "checks": [
+    {
+      "name": "min_wall_thickness",
+      "enabled": true,
+      "parameters": {
+        "min_thickness_mm": 1.0
+      }
+    },
+    {
+      "name": "body_interference",
+      "enabled": true,
+      "parameters": {}
+    },
+    {
+      "name": "open_shell_detection",
+      "enabled": true,
+      "parameters": {}
+    },
+    {
+      "name": "dimension_sanity",
+      "enabled": true,
+      "parameters": {
+        "min_mm": 0.1,
+        "max_mm": 5000.0
+      }
+    },
+    {
+      "name": "sketch_fully_constrained",
+      "enabled": true,
+      "parameters": {
+        "check_before": ["pad", "pocket"]
+      }
+    }
+  ],
+  "on_failure": {
+    "action": "retry",
+    "max_retries": 2,
+    "halt_on_3rd_failure": true
+  }
+}

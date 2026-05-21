@@ -1,0 +1,31 @@
+{
+  "template_name": "state_query",
+  "description": "Query FreeCAD state after an operation for context injection",
+  "model_target": "none",
+  "temperature": 0.0,
+  "query_fields": [
+    "active_document",
+    "objects_count",
+    "objects_list",
+    "active_body",
+    "active_sketch",
+    "last_operation",
+    "bounding_box"
+  ],
+  "output_format": {
+    "document": "string",
+    "object_count": "integer",
+    "objects": ["string"],
+    "active_body": "string|null",
+    "active_sketch": "string|null",
+    "last_operation": "string|null",
+    "bounds": {
+      "x_min": "float",
+      "x_max": "float",
+      "y_min": "float",
+      "y_max": "float",
+      "z_min": "float",
+      "z_max": "float"
+    }
+  }
+}

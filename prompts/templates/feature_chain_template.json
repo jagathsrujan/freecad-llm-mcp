@@ -1,0 +1,54 @@
+{
+  "template_name": "feature_chain",
+  "description": "Executes a sequence of FreeCAD operations on a single body",
+  "model_target": "deepseek-chat",
+  "temperature": 0.15,
+  "operations": [
+    {
+      "order": 1,
+      "type": "sketch",
+      "description": "Create base sketch on selected plane",
+      "parameters": {
+        "plane": "XY",
+        "sketch_type": "rectangle"
+      }
+    },
+    {
+      "order": 2,
+      "type": "pad",
+      "description": "Extrude base sketch to create solid",
+      "parameters": {
+        "length_mm": null
+      }
+    },
+    {
+      "order": 3,
+      "type": "sketch",
+      "description": "Create secondary sketch on face",
+      "parameters": {
+        "plane": "face",
+        "sketch_type": "circle"
+      }
+    },
+    {
+      "order": 4,
+      "type": "pocket",
+      "description": "Cut through-hole with pocket",
+      "parameters": {
+        "depth_mm": null,
+        "through_all": true
+      }
+    },
+    {
+      "order": 5,
+      "type": "fillet",
+      "description": "Apply fillet to selected edges",
+      "parameters": {
+        "radius_mm": null,
+        "edge_selection": "all_exterior"
+      }
+    }
+  ],
+  "state_query_interval": 2,
+  "validation_required": true
+}
