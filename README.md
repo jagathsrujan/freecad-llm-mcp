@@ -76,6 +76,7 @@ freecad-llm-mcp/
 ├── src/            # Core pipeline, validation, MCP client
 ├── configs/        # Model and server configuration
 ├── examples/       # End-to-end worked examples
+├── WORKFLOW_RESULTS.md  # Real-world usage log
 └── tests/          # Unit tests
 ```
 
@@ -89,6 +90,13 @@ freecad-llm-mcp/
 - DeepSeek performs comparably to Sonnet for execution when given schema-constrained prompts
 
 Full research notes: [`docs/research_notes.md`](docs/research_notes.md)
+
+---
+
+## Workflow Results
+
+I'm testing this framework in real CAD work and logging results as I go.
+See [`WORKFLOW_RESULTS.md`](WORKFLOW_RESULTS.md) for ongoing pros, cons, and findings.
 
 ---
 
